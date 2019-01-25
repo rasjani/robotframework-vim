@@ -35,7 +35,7 @@ syn match robotPath                 display "\(\.\{1,2}\/\)\=\(\(\h\|\d\)\+\/\)\
 " Operators
 syn match robotOperator             "==\|="
 " Table headers
-syn match robotTable                "\c^\(\*\+\)\s*\(settings\|variables\|test cases\|\(user \)\?keywords\)\s*\1$"
+syn match robotTable                "\c^\(\*\+\)\s*\(settings\|variables\|test cases\|tasks\|\(user \)\?keywords\)\s*\1$"
 " Common settings
 syn match robotCommonSet            "\c\[\(Documentation\|Timeout\)\]"
 " Keyword settings
@@ -47,7 +47,7 @@ syn match robotTestcaseSet          "\c\[\(Tags\|Setup\|Teardown\|Precondition\|
 syn match robotGherkin              "\c\<\(Given\|When\|Then\|And\|But\)\>"
 
 " Settings (global)
-syn match robotSetup                "\c\<\(Suite\|Test\) \(Setup\|Teardown\|Precondition\|Postcondition\)\>"
+syn match robotSetup                "\c\<\(Suite\|Test\|Task\) \(Setup\|Teardown\|Precondition\|Postcondition\)\>"
 syn match robotSettings             "\c\<\(Library\|Resource\|Variables\|Documentation\|Metadata\|Force Tags\|Default Tags\|Test Template\|Test Timeout\)\>"
 
 " Standard libraries
