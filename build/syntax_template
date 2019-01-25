@@ -66,6 +66,12 @@ syn match xmlLibrary                "%%xmlLibrary%%"
 " See and follow listing order as above.
 syn match seleniumLibrary           "%%seleniumLibrary%%"
 syn match sshLibrary                "%%sshLibrary%%"
+syn match requestsLibrary           "%%requestsLibrary%%"
+syn match fakerLibrary              "%%fakerLibrary%%"
+syn match appiumLibrary             "%%appiumLibrary%%"
+syn match restInstanceLibrary       "%%restInstanceLibrary%%"
+syn match archiveLibrary            "%%archiveLibrary%%"
+syn match ftpLibrary                "%%ftpLibrary%%"
 
 " The built-in standard library comes last to re-match the keywords already caught.
 " See and follow listing order as above.
@@ -75,8 +81,9 @@ syn match builtInLibrary            "%%builtInLibrary%%"
 " Regions
 "------------------------------------------------------------------------
 " Single-line comments. Are there multi-line comments?
-syn region robotComment     display start="#" excludenl end="$"
+syn region robotComment     display start="\(^\|  \|\t\)[ \t]*#" excludenl end="$"
 syn region robotString      start="\"" excludenl end="\""
+syn region robotString      start="'" excludenl end="'"
 
 "------------------------------------------------------------------------
 " Keywords
@@ -103,7 +110,7 @@ hi def link robotKeywordSet         Keyword
 hi def link robotTestcaseSet        Keyword
 hi def link robotGherkin            Keyword
 
-hi def link builtInLibrary          Comment
+hi def link builtInLibrary          Keyword
 hi def link collectionsLibrary      Keyword
 hi def link dateTimeLibrary         Keyword
 hi def link dialogLibrary           Keyword
@@ -115,6 +122,10 @@ hi def link telnetLibrary           Keyword
 hi def link xmlLibrary              Keyword
 hi def link seleniumLibrary         Keyword
 hi def link sshLibrary              Keyword
+hi def link requestsLibrary         Keyword
+hi def link fakerLibrary            Keyword
+hi def link appiumLibrary           Keyword
+hi def link restInstanceLibrary     Keyword
 
 let b:current_syntax = "robot"
 "------------------------------------------------------------------------

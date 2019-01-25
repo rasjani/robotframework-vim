@@ -18,7 +18,13 @@ scanned_libs = {
     "Telnet": "telnetLibrary",
     "XML": "xmlLibrary",
     "SeleniumLibrary": "seleniumLibrary",
-    "SSHLibrary": "sshLibrary"
+    "SSHLibrary": "sshLibrary",
+    "RequestsLibrary": "requestsLibrary",
+    "FakerLibrary": "fakerLibrary",
+    "AppiumLibrary": "appiumLibrary",
+    "REST": "restInstanceLibrary",
+    "ArchiveLibrary": "archiveLibrary",
+    "FtpLibrary": "ftpLibrary",
 }
 
 
@@ -27,6 +33,7 @@ for l in scanned_libs:
     libname = l
     templatename = scanned_libs[libname]
     lib = LibraryDocumentation(libname)
+    # TODO: Sort keywords alphabetically and *longest* first
     for kw in lib.keywords:
         keywords.append(kw.name)
 
