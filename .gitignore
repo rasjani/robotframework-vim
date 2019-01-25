@@ -1,3 +1,4 @@
 # Editor drops
 *.swp
 *~
+venv
