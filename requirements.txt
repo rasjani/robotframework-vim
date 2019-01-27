@@ -1,0 +1,9 @@
+robotframework-seleniumlibrary
+robotframework-sshlibrary
+robotframework-requests
+robotframework-faker
+robotframework-databaselibrary
+robotframework-appiumlibrary
+robotframework-ftplibrary
+RESTInstance
+robotframework-archivelibrary
