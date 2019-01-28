@@ -1,7 +1,22 @@
 #!/usr/bin/env python
 
 from robot.libdoc import LibraryDocumentation
+from functools import cmp_to_key
 
+def keywordsort(x,y):
+    a = x.lower()
+    b = y.lower()
+    if a < b:
+        if a.startswith(b):
+            return 1
+        else:
+            return -1
+    elif a > b:
+        if a.startswith(b):
+            return -1
+        else:
+            return 1
+    return 0
 
 with open("syntax_template", "r") as inb:
     template = inb.read()
@@ -33,9 +48,10 @@ for l in scanned_libs:
     libname = l
     templatename = scanned_libs[libname]
     lib = LibraryDocumentation(libname)
-    # TODO: Sort keywords alphabetically and *longest* first
     for kw in lib.keywords:
         keywords.append(kw.name)
+
+    keywords = sorted(keywords, key=cmp_to_key(keywordsort))
 
     pre = "\c\<\("
     post = "\)\>"
